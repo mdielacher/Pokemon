@@ -6,3 +6,10 @@ Und da wir nur mit einer Tabelle arbeiten und somit haben wir
 auch keine Relationen zwischen Tabellen die bestehen sollten.
 
 Der Tradeoff zwischen Ananymisierung und Vollständing verwendbare Daten herscht nicht
+
+Da Pokemon ein künstlich erschaffene Domäne bzw. Figur ist und es so nicht in der Realtät existiert. 
+Ist die „Underlying“ data distribution und der gesamplten distribution kein unterschied bzw. ist das selbe.
+Ein Rebalaning der Daten würde die „Underlying“ data distribution verändern bzw. verfälschen. (nur sinnvoll im Anwendungsfall Klassifizieren , damit die Klasse nicht unterrepräsentiert ist und ein erkennen möcglich ist)
+
+Diese künstlich erschafene Domäne ist über das Dataset rerpresentiert. Und die Datenqualität ist somit duch die Quelle über die heruntergeladen wurde sichergestellt.
+zb. Dopplte , oder Missing values können gar nicht entstehen
