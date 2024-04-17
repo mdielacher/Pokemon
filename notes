@@ -1,0 +1,8 @@
+Private Daten (DSVGO)  -> haben wir nicht 
+---> somit es gibt nichts zum Anonymisieren oder Pseudonymisieren
+
+
+Und da wir nur mit einer Tabelle arbeiten und somit haben wir 
+auch keine Relationen zwischen Tabellen die bestehen sollten.
+
+Der Tradeoff zwischen Ananymisierung und Vollständing verwendbare Daten herscht nicht
