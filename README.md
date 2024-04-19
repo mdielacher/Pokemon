@@ -9,10 +9,11 @@ Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
 
 **Generierung von Namen mit einem LLM:** Auf Basis der durch CTGAN generierten Daten verwenden wir ein Large Language Model (LLM), um Namen für die synthetischen Pokémon-Daten zu erstellen. Dieser Prozess ermöglicht es, kreative und realistisch klingende Namen automatisiert zu generieren.
 
-**Überprüfung durch Generator und Diskriminator: **Um die Qualität der generierten Daten zu testen, setzen wir einen Generator und Diskriminator ein. Diese prüfen, ob das Generative Adversarial Network (GAN) in der Lage ist, zwischen echten und synthetischen Pokémon-Daten zu unterscheiden.
+**Überprüfung durch Generator und Diskriminator:** Um die Qualität der generierten Daten zu testen, setzen wir einen Generator und Diskriminator ein. Diese prüfen, ob das Generative Adversarial Network (GAN) in der Lage ist, zwischen echten und synthetischen Pokémon-Daten zu unterscheiden.
 
 ## Data Description:
 **Source:**: https://www.kaggle.com/datasets/abcsds/pokemon
+
 **Datenqualität:** 
 Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen der Einträge sehr inkonsistent. Weitere Details dazu finden Sie im Kapitel zur Datenvorbereitung.
 
@@ -37,7 +38,9 @@ In diesem Kapitel widmen wir uns der eingehenden Analyse der Rohdaten. Ziel ist 
 
 **1. Deskriptive Statistik:** Wir berechnen grundlegende statistische Kennzahlen wie Mittelwert, Median, Modus, Standardabweichung usw., um ein Gefühl für die Verteilung der Daten zu bekommen.
 Visualisierung: Durch den Einsatz verschiedener Diagramme und Plots (z.B. Histogramme, Boxplots, Scatterplots) visualisieren wir die Daten, um Trends, Ausreißer und Gruppierungen besser erkennen zu können.
+
 **2. Korrelationsanalyse:** Wir untersuchen die Beziehungen zwischen verschiedenen Variablen, um zu verstehen, welche Merkmale miteinander korrelieren. Dies hilft uns, Hypothesen für weitergehende Analysen zu formulieren.
+
 **3. Erkennung von Anomalien:** Eventuelle Datenanomalien oder ungewöhnliche Muster werden identifiziert, die spezielle Aufmerksamkeit erfordern oder auf Datenbereinigungsbedarf hinweisen könnten.
 Ergebnisse dieses Kapitels:
 
