@@ -2,11 +2,20 @@
 **Group 1:** Lisa Rost, Merna Zaher, Lena Huber, Marcel Dielacher
 
 ## Use Case:
-WIr haben uns auf 3 Use Cases geeinigt
+
+Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
+
+**Generierung von Daten mit CTGAN:** Wir nutzen Conditional Generative Adversarial Networks (CTGAN), um synthetische Daten zu erstellen. Dies hilft uns, Muster und Szenarien zu simulieren, die in den ursprünglichen Daten nicht ausreichend vertreten sind.
+
+**Generierung von Namen mit einem LLM:** Auf Basis der durch CTGAN generierten Daten verwenden wir ein Large Language Model (LLM), um Namen für die synthetischen Pokémon-Daten zu erstellen. Dieser Prozess ermöglicht es, kreative und realistisch klingende Namen automatisiert zu generieren.
+
+**Überprüfung durch Generator und Diskriminator: **Um die Qualität der generierten Daten zu testen, setzen wir einen Generator und Diskriminator ein. Diese prüfen, ob das Generative Adversarial Network (GAN) in der Lage ist, zwischen echten und synthetischen Pokémon-Daten zu unterscheiden.
 
 ## Data Description:
 **Source:**: https://www.kaggle.com/datasets/abcsds/pokemon
 **Datenqualität:** 
+Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen der Einträge sehr inkonsistent. Weitere Details dazu finden Sie im Kapitel zur Datenvorbereitung.
+
 
 ## Process:
 
