@@ -15,19 +15,25 @@ class GAN():
     def create_generator(self) -> models.Sequential:
         """Generate generator"""
         model = models.Sequential(name="generator_model")
-        model.add(layers.Dense(50, activation='relu',input_dim=self.noise_dim))
-        model.add(layers.Dense(100, activation='relu'))
-        model.add(layers.Dense(self.data.shape[1], activation='sigmoid'))
+        model.add(layers.Dense(256, activation='relu', input_dim=self.noise_dim))  # Increased from 50 to 256
+        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
+        model.add(layers.Dense(512, activation='relu'))  # New layer
+        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
+        model.add(layers.Dense(1024, activation='relu'))  # New layer
+        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
+        model.add(layers.Dense(self.data.shape[1], activation='tanh'))  # Changed to tanh activation
         return model
     
     
     def create_discriminator(self) -> models.Sequential:
         """Generate discriminator"""
         model = models.Sequential(name="discriminator_model")
-        model.add(layers.Dense(50, activation='relu',input_dim=self.data.shape[1]))
-        model.add(layers.Dense(100, activation='relu'))
+        model.add(layers.Dense(64, activation='relu', input_dim=self.data.shape[1]))  # Reduced from 50 to 64
+        model.add(layers.Dropout(0.4))  # Add dropout for regularization
+        model.add(layers.Dense(128, activation='relu'))  # Reduced from 100 to 128
+        model.add(layers.Dropout(0.4))  # Add dropout for regularization
         model.add(layers.Dense(1, activation='sigmoid'))
-        model.compile(loss='binary_crossentropy',optimizer='adam', metrics=['accuracy'])
+        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
         return model
     
     def compile(self, generator, discriminator) -> models.Sequential:

@@ -1,0 +1,16 @@
+,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Legendary,Generation,Type 1,Type 2
+0,87.0,52.0,105.0,105.0,100.0,87.0,False,3,Rock,Ground
+1,44.0,48.0,91.0,42.0,56.0,88.0,False,3,Water,Grass
+2,95.0,108.0,52.0,106.0,100.0,97.0,True,3,)Normal,Flying
+3,44.0,111.0,47.0,40.0,44.0,39.0,False,2,Ground,Dragon
+4,95.0,111.0,86.0,92.0,100.0,96.0,True,3,)Normal,None
+5,95.0,111.0,105.0,106.0,100.0,93.0,True,3,Dark,Bug
+6,95.0,47.0,86.0,106.0,100.0,97.0,False,3,Dark,Fairy
+7,44.0,111.0,99.0,41.0,96.0,41.0,False,3,Fire,Grass
+8,94.0,74.0,43.0,46.0,69.0,97.0,False,6,Bug,None
+9,44.0,111.0,43.0,40.0,45.0,39.0,True,6,Electric,Dragon
+10,44.0,110.0,43.0,40.0,44.0,43.0,False,2,Flying,Dragon
+11,44.0,111.0,44.0,40.0,44.0,39.0,False,4,Ground,Dragon
+12,48.0,104.0,70.0,54.0,94.0,39.0,True,3,Psychic,Bug
+13,44.0,111.0,43.0,40.0,44.0,39.0,False,1,Electric,Dragon
+14,95.0,80.0,105.0,106.0,100.0,97.0,False,5,Dark,Dark
