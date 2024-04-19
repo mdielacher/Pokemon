@@ -1,6 +1,7 @@
 import numpy as np
 from keras import layers, models
-
+from datetime import datetime
+import keras
 
 class GAN():
     """Class to train a GAN model"""
@@ -14,8 +15,8 @@ class GAN():
     def create_generator(self) -> models.Sequential:
         """Generate generator"""
         model = models.Sequential(name="generator_model")
-        model.add(layers.Dense(15, activation='relu',input_dim=self.noise_dim))
-        model.add(layers.Dense(30, activation='relu'))
+        model.add(layers.Dense(50, activation='relu',input_dim=self.noise_dim))
+        model.add(layers.Dense(100, activation='relu'))
         model.add(layers.Dense(self.data.shape[1], activation='sigmoid'))
         return model
     
@@ -23,8 +24,8 @@ class GAN():
     def create_discriminator(self) -> models.Sequential:
         """Generate discriminator"""
         model = models.Sequential(name="discriminator_model")
-        model.add(layers.Dense(25, activation='relu',input_dim=self.data.shape[1]))
-        model.add(layers.Dense(50, activation='relu'))
+        model.add(layers.Dense(50, activation='relu',input_dim=self.data.shape[1]))
+        model.add(layers.Dense(100, activation='relu'))
         model.add(layers.Dense(1, activation='sigmoid'))
         model.compile(loss='binary_crossentropy',optimizer='adam', metrics=['accuracy'])
         return model
@@ -48,6 +49,8 @@ class GAN():
         return model
 
     def train(self, generator, discriminator, gan):
+        discriminator_losses = []
+        generator_losses = []
         for epoch in range(self.epochs):
             noise = np.random.normal(0, 1, (self.batch_size, self.noise_dim))
             
@@ -64,18 +67,23 @@ class GAN():
             labels = np.concatenate([real_labels, fake_labels])
             X = np.concatenate([real_data, generated_data])
             discriminator.trainable = True
-            print(len(X))
-            print(len(labels))
             d_loss , _ = discriminator.train_on_batch(X, labels)
+            discriminator_losses.append(d_loss)
 
             # Train the generator
             noise = np.random.normal(0, 1, (self.batch_size, self.noise_dim))
             g_loss = gan.train_on_batch(noise, np.ones(self.batch_size))
+            generator_losses.append(g_loss)
 
 
-            print('>%d, d1=%.3f, d2=%.3f' %(epoch+1, d_loss, g_loss))
+            print('>%d, d_loss=%.3f, g_loss=%.3f' %(epoch+1, d_loss, g_loss))
 
-        return generator
+        timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        models.save_model(gan, filepath=f'models/evaluation/models/gan_model_{timestamp}.keras')
+        keras.Model.save_weights(gan, f'models/evaluation/weights/gan_model_{timestamp}.weights.h5')
+        
+
+        return generator, discriminator_losses, generator_losses
     
     #TODO: generator evaluerien
     
