@@ -54,8 +54,6 @@ class GAN():
             labels = np.concatenate([real_labels, fake_labels])
             X = np.concatenate([self.data, generated_data])
             discriminator.trainable = True
-            print(X)
-            print(labels)
             d_loss , _ = discriminator.train_on_batch(X, labels)
 
             # Train the generator
@@ -67,17 +65,17 @@ class GAN():
         return generator
     
 
-def main():
+# def main():
     
-    df_pokemon= pd.read_csv("./data/Pokemon.csv")
-    df_pokemon = df_pokemon.drop(columns=['Name', 'Total'], axis=1)
-    df_pokemon.head()
-    noise = np.random.normal(0, 1, df_pokemon.shape) 
-    gan = GAN(data=df_pokemon, noise=noise, epochs=2)
-    generator = gan.create_generator()
-    discriminator = gan.create_discriminator()
-    gan_model = gan.compile(generator=generator, discriminator=discriminator)
-    trained_gan = gan.train(generator=generator,discriminator=discriminator, gan=gan)
+#     df_pokemon= pd.read_csv("./data/Pokemon.csv")
+#     df_pokemon = df_pokemon.drop(columns=['Name', 'Total'], axis=1)
+#     df_pokemon.head()
+#     noise = np.random.normal(0, 1, df_pokemon.shape) 
+#     gan = GAN(data=df_pokemon, noise=noise, epochs=2)
+#     generator = gan.create_generator()
+#     discriminator = gan.create_discriminator()
+#     gan_model = gan.compile(generator=generator, discriminator=discriminator)
+#     trained_gan = gan.train(generator=generator,discriminator=discriminator, gan=gan)
 
     
-main()
+# main()
