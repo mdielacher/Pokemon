@@ -48,5 +48,5 @@ Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb
 
 ### Model:
 
-## Namensgenerierung der Pokemons:
+### Namensgenerierung der Pokemons:
 ### Evaluation:
