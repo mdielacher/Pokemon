@@ -7,16 +7,15 @@ Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
 
 **Generierung von Daten mit CTGAN:** Wir nutzen Conditional Generative Adversarial Networks (CTGAN), um synthetische Daten zu erstellen. Dies hilft uns, Muster und Szenarien zu simulieren, die in den ursprünglichen Daten nicht ausreichend vertreten sind.
 
-**Generierung von Namen mit einem LLM:** Auf Basis der durch CTGAN generierten Daten verwenden wir ein Large Language Model (LLM), um Namen für die synthetischen Pokémon-Daten zu erstellen. Dieser Prozess ermöglicht es, kreative und realistisch klingende Namen automatisiert zu generieren.
+**Mit Tensforflow ein eigenes GAN zu programmieren:** Dieser Output wird dann mit dem CTGAN Daten verglichen un evaluiert.
 
-**Überprüfung durch Generator und Diskriminator:** Um die Qualität der generierten Daten zu testen, setzen wir einen Generator und Diskriminator ein. Diese prüfen, ob das Generative Adversarial Network (GAN) in der Lage ist, zwischen echten und synthetischen Pokémon-Daten zu unterscheiden.
+**Generierung von Namen mit einem LLM:** Auf Basis der durch CTGAN generierten Daten verwenden wir ein Large Language Model (LLM), um Namen für die synthetischen Pokémon-Daten zu erstellen. Dieser Prozess ermöglicht es, kreative und realistisch klingende Namen automatisiert zu generieren.
 
 ## Data Description:
 **Source:**: https://www.kaggle.com/datasets/abcsds/pokemon
 
 **Datenqualität:** 
 Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen der Einträge sehr inkonsistent. Weitere Details dazu finden Sie im Kapitel zur Datenvorbereitung.
-
 
 ## Process:
 
@@ -25,14 +24,13 @@ Im Rahmen der Datenvorbereitung wurde zunächst der Rohdatensatz eingelesen. Um 
 
 Ein weiterer wichtiger Schritt in der Datenvorbereitung war die Bearbeitung der Pokémon-Namen. Viele Namen im ursprünglichen Kaggle-Datensatz waren inkonsistent formatiert, enthielten unnötige Wiederholungen oder Abkürzungen, die nicht standardisiert waren. Um dieses Problem zu adressieren, wurden die Namen mithilfe von Funktionen automatisiert bereinigt. Zusätzlich wurde eine manuelle Nachbearbeitung durchgeführt, um spezielle Fälle zu korrigieren, die nicht vollständig durch die automatisierten Prozesse abgedeckt werden konnten.
 
-Diese Schritte stellen sicher, dass der Datensatz sauber, konsistent und bereit für die nachfolgende Analyse ist. Der vorbereitete Datensatz wird in der Datei preprocessed_pokemon.csv gespeichert, die für alle weiteren Analyseschritte verwendet wird.
-
-Ein weiterer Schritt war es die Evolutionsstufen der Pokemons zu mergen, dies stellte eine Riesen Herausforderung dar.
-
+Diese Schritte stellen sicher, dass der Datensatz sauber, konsistent und bereit für die nachfolgende Analyse ist. Der vorbereitete Datensatz wird in der Datei **preprocessed_pokemon.csv** gespeichert, die für alle weiteren Analyseschritte verwendet wird. 
 Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
+Ein zusätzlicher Aspekt unseres Projekts war die Zusammenführung der Evolutionsstufen der Pokémon, was sich als besonders herausfordernd erwies. Der Versuch, die Daten mit ChatGPT 4 zu erfassen, führte nicht zum gewünschten Erfolg. Wir experimentierten auch mit dem Notebook **[EINFÜGEEN !!!!!!!!!]** und setzten CoPilot ein, um die Daten zu rekonstruieren, was überraschend gut gelang. Allerdings gab es Formatierungsprobleme bei einigen Pokémon. Anschließend haben wir die Daten mit einer weiteren Datei **einfügen !!!!!!!!** zusammengeführt um die richtigen Evolutionsstufen zu mergen.
+
 ### Data Understanding:
-In diesem Kapitel widmen wir uns der eingehenden Analyse der Rohdaten. Ziel ist es, ein tiefes Verständnis für die vorhandenen Datenstrukturen und die in den Daten enthaltenen Informationen zu entwickeln. Dies umfasst die Untersuchung von Datenverteilungen, das Erkennen von Mustern und das Identifizieren von Zusammenhängen zwischen verschiedenen Datenpunkten.
+In diesem Kapitel widmen wir uns der eingehenden Analyse der Rohdaten. Ziel ist es, ein tiefes Verständnis für die vorhandenen Datenstrukturen und die in den Daten enthaltenen Informationen zu entwickeln. Dies umfasst die Untersuchung von Datenverteilungen, das Erkennen von Mustern und das Identifizieren von Zusammenhängen zwischen verschiedenen Datenpunkten. Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
 **Hauptaktivitäten:**
 
@@ -47,8 +45,11 @@ Ergebnisse dieses Kapitels:
 Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
 ### Model:
+#### CTGAN:
+
+#### Tensorflow GAN:
 
 ### Namensgenerierung der Pokemons:
-
+Natürlich wäre es langweilig wenn die Daten synthetischen Pokemons keine Namen hätten, deswegen wurde ein LLM-Assitant mit GPT35-turbo erstellt um auf basis der Stats Namen zu generieren. Dazu haben wir auch noch ein weiteres Model Namens Llama 2 7B verwendet um einen Vergleich zu machen. Da Texte nicht messbar sind.
 
 ### Evaluation:
