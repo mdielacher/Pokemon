@@ -1,0 +1,16 @@
+,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Legendary,Generation,Type 1,Type 2,Evolution,Total
+0,49.0,108.0,105.0,105.0,44.0,97.0,True,6,Fairy,Bug,Stage2,508.0
+1,93.0,52.0,77.0,105.0,100.0,96.0,False,5,Normal,Ghost,Mega,523.0
+2,44.0,55.0,43.0,99.0,47.0,60.0,False,1,Poison,Fire,Basic,348.0
+3,45.0,111.0,105.0,69.0,100.0,97.0,False,1,Water,Electric,Stage2,527.0
+4,46.0,51.0,89.0,99.0,47.0,94.0,False,6,Bug,Steel,Stage2,426.0
+5,44.0,80.0,104.0,101.0,89.0,42.0,False,3,Fire,Normal,Stage2,460.0
+6,44.0,111.0,101.0,44.0,98.0,97.0,False,2,Ghost,Steel,Stage2,495.0
+7,58.0,111.0,43.0,41.0,80.0,39.0,True,1,Dark,Dark,Mega,372.0
+8,45.0,78.0,104.0,74.0,44.0,97.0,True,6,Rock,Normal,Stage2,442.0
+9,84.0,52.0,59.0,104.0,44.0,40.0,True,6,Dragon,Fairy,Basic,383.0
+10,44.0,57.0,46.0,91.0,45.0,41.0,False,3,Rock,Dark,Stage1,324.0
+11,47.0,109.0,43.0,40.0,45.0,39.0,False,1,)Normal,Water,Basic,323.0
+12,53.0,110.0,43.0,103.0,83.0,48.0,True,2,Fighting,Ghost,Basic,440.0
+13,95.0,104.0,105.0,42.0,44.0,40.0,True,6,Rock,Steel,Stage2,430.0
+14,59.0,47.0,91.0,55.0,55.0,70.0,True,5,Normal,Ice,Stage1,377.0

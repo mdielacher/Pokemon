@@ -1,5 +1,5 @@
 import numpy as np
-from keras import layers, models
+from keras import layers, models, initializers
 from datetime import datetime
 import keras
 
@@ -15,28 +15,46 @@ class GAN():
     def create_generator(self) -> models.Sequential:
         """Generate generator"""
         model = models.Sequential(name="generator_model")
-        model.add(layers.Dense(256, activation='relu', input_dim=self.noise_dim))  # Increased from 50 to 256
-        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
-        model.add(layers.Dense(512, activation='relu'))  # New layer
-        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
-        model.add(layers.Dense(1024, activation='relu'))  # New layer
-        model.add(layers.BatchNormalization(momentum=0.8))  # Add batch normalization
-        model.add(layers.Dense(self.data.shape[1], activation='tanh'))  # Changed to tanh activation
+
+        model.add(layers.Dense(64, input_dim=self.noise_dim))  
+        model.add(layers.Dropout(0.2))
+        model.add(layers.LeakyReLU(alpha=0.2))
+        model.add(layers.BatchNormalization(momentum=0.8))  
+
+        model.add(layers.Dense(128))  
+        model.add(layers.Dropout(0.2))
+        model.add(layers.LeakyReLU(alpha=0.2))
+        model.add(layers.BatchNormalization(momentum=0.8))
+
+        model.add(layers.Dense(256)) 
+        model.add(layers.Dropout(0.2))
+        model.add(layers.LeakyReLU(alpha=0.2)) 
+        model.add(layers.BatchNormalization(momentum=0.8))  
+        model.add(layers.Dense(self.data.shape[1], activation='tanh'))  
         return model
     
     
     def create_discriminator(self) -> models.Sequential:
         """Generate discriminator"""
+        init = initializers.RandomNormal(mean=0.0, stddev=0.02)
         model = models.Sequential(name="discriminator_model")
-        model.add(layers.Dense(64, activation='relu', input_dim=self.data.shape[1]))  # Reduced from 50 to 64
-        model.add(layers.Dropout(0.4))  # Add dropout for regularization
-        model.add(layers.Dense(128, activation='relu'))  # Reduced from 100 to 128
-        model.add(layers.Dropout(0.4))  # Add dropout for regularization
+
+        model.add(layers.Dense(256,  input_dim=self.data.shape[1], kernel_initializer=init)) 
+        model.add(layers.LeakyReLU(alpha=0.2))
+
+        model.add(layers.Dense(128, activation='relu', kernel_initializer=init)) 
+        model.add(layers.LeakyReLU(alpha=0.2))
+        model.add(layers.Dropout(0.4))
+
+        model.add(layers.Dense(64, kernel_initializer=init))
+        model.add(layers.LeakyReLU(alpha=0.2))
+        model.add(layers.Dropout(0.4))
+
         model.add(layers.Dense(1, activation='sigmoid'))
         model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
         return model
     
-    def compile(self, generator, discriminator) -> models.Sequential:
+    def model_compile(self, generator, discriminator) -> models.Sequential:
         """Combine discriminator and generator to one model
 
         Args:
