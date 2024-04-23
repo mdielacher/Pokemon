@@ -3,3 +3,4 @@ seaborn
 matplotlib
 openai==1.20.0
 sdv
+llama_index
