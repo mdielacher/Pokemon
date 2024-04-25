@@ -80,4 +80,20 @@ Die durchgeführten Experimente zeigten, dass GPT-3.5-turbo konsistentere und kr
 Zu finden ist dieses Kapitel unter: **"pokemon_namen_generierung.ipynb"**
 
 ## 5. Evaluation:
+### Generierung von Pokemon Stats:
+Wie bereits erwähnt haben wir in diesem Projekt drei verschiedene Typen von Generative Adversarial Networks (GANs) implementiert und getestet: 
+
+CTGAN, Gaussian GAN und ein GAN basierend auf TensorFlow. Unsere Analysen zeigen, dass CTGAN und Gaussian GAN hervorragende Ergebnisse liefern, während das TensorFlow GAN im Vergleich weniger zufriedenstellende Leistungen zeigt. 
+
+**Problem beim TF GAN:**
+Der Mode Collapse ist ein bekanntes Problem in der Entwicklung von GANs und kann durch verschiedene Faktoren verursacht werden, einschließlich der Wahl der Loss-Funktion, des Optimierungsalgorithmus und der Netzwerkarchitektur. Dieses Problem zeigt die Grenzen des TensorFlow GANs unter aktuellen Einstellungen und betont die Notwendigkeit für weiterführende Forschung und Anpassungen.
+
+### Generierung von Pokemon Namen:
+Im Vergleich dazu lieferte das LLaMA 2 7B Modell weniger zufriedenstellende Ergebnisse. Die von diesem Modell generierten Namen waren oft repetitiv und mangelten an Kreativität. Es schien Schwierigkeiten zu haben, die komplexen Anforderungen der Aufgabe zu verstehen und umzusetzen, was zu einer begrenzten Vielfalt in den Ergebnissen führte.
+
+**Problem beim LLama 2 7B Modell:**
+Die Unterschiede in der Leistung der beiden Modelle können auf die Architektur und das Training der Modelle zurückgeführt werden. GPT-3.5 Turbo, das speziell für kreative und kontextabhängige Aufgaben optimiert ist, konnte seine Stärken in dieser speziellen Aufgabe ausspielen. LLaMA 2 7B, obwohl leistungsfähig in vielen Bereichen, scheint nicht so effektiv bei Aufgaben zu sein, die ein hohes Maß an Kreativität und spezifischem Kontextverständnis erfordern.
+
+
+
 
