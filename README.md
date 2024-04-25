@@ -7,7 +7,7 @@ Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
 
 **Generierung von Daten mit CTGAN:** Wir nutzen Conditional Generative Adversarial Networks (CTGAN), um synthetische Daten zu erstellen. Dies hilft uns, Muster und Szenarien zu simulieren, die in den ursprünglichen Daten nicht ausreichend vertreten sind.
 
-**Mit Tensforflow ein eigenes GAN zu programmieren:** Dieser Output wird dann mit dem CTGAN Daten verglichen un evaluiert.
+**Mit Tensforflow ein eigenes GAN zu programmieren:** Dieser Output wird dann mit dem CTGAN Daten verglichen und evaluiert.
 
 **Generierung von Namen mit einem LLM:** Auf Basis der durch CTGAN generierten Daten verwenden wir ein Large Language Model (LLM), um Namen für die synthetischen Pokémon-Daten zu erstellen. Dieser Prozess ermöglicht es, kreative und realistisch klingende Namen automatisiert zu generieren.
 
@@ -20,7 +20,8 @@ Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen d
 
 ## Process:
 
-### Data Preperation:
+
+## 1. Data Preperation:
 Im Rahmen der Datenvorbereitung wurde zunächst der Rohdatensatz eingelesen. Um die Daten übersichtlicher und effizienter für die weitere Analyse zu gestalten, haben wir uns entschieden, bestimmte Spalten zu entfernen. Insbesondere die Spalten Total und #, welche für unsere Analysezwecke nicht relevant waren, wurden aus dem Datensatz entfernt.
 
 Ein weiterer wichtiger Schritt in der Datenvorbereitung war die Bearbeitung der Pokémon-Namen. Viele Namen im ursprünglichen Kaggle-Datensatz waren inkonsistent formatiert, enthielten unnötige Wiederholungen oder Abkürzungen, die nicht standardisiert waren. Um dieses Problem zu adressieren, wurden die Namen mithilfe von Funktionen automatisiert bereinigt. Zusätzlich wurde eine manuelle Nachbearbeitung durchgeführt, um spezielle Fälle zu korrigieren, die nicht vollständig durch die automatisierten Prozesse abgedeckt werden konnten.
@@ -30,7 +31,7 @@ Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb
 
 Ein zusätzlicher Aspekt unseres Projekts war die Zusammenführung der Evolutionsstufen der Pokémon, was sich als besonders herausfordernd erwies. Der Versuch, die Daten mit ChatGPT 4 zu erfassen, führte nicht zum gewünschten Erfolg. Wir experimentierten auch mit dem Notebook **[EINFÜGEEN !!!!!!!!!]** und setzten CoPilot ein, um die Daten zu rekonstruieren, was überraschend gut gelang. Allerdings gab es Formatierungsprobleme bei einigen Pokémon. Anschließend haben wir die Daten mit einer weiteren Datei **einfügen !!!!!!!!** zusammengeführt um die richtigen Evolutionsstufen zu mergen.
 
-### Data Understanding:
+## 2. Data Understanding:
 In diesem Kapitel widmen wir uns der eingehenden Analyse der Rohdaten. Ziel ist es, ein tiefes Verständnis für die vorhandenen Datenstrukturen und die in den Daten enthaltenen Informationen zu entwickeln. Dies umfasst die Untersuchung von Datenverteilungen, das Erkennen von Mustern und das Identifizieren von Zusammenhängen zwischen verschiedenen Datenpunkten. Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
 **Hauptaktivitäten:**
@@ -45,21 +46,21 @@ Ergebnisse dieses Kapitels:
 
 Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
-### Model:
-#### CTGAN:
+## 3. Model:
+### CTGAN:
 
-#### Tensorflow GAN:
+### Tensorflow GAN:
 
-### Namensgenerierung der Pokemons:
-#### GPT-3.5-turbo:
+## 4. Namensgenerierung der Pokemons:
+### GPT-3.5-turbo:
 Dieses Modell wurde aufgrund seiner neuesten Architektur und optimierten Performance für die Generierung kreativer und konsistenter Pokemon-Namen ausgewählt. Die Basis der Namensgenerierung bilden die statistischen Daten der Pokemon, wie Typ, Angriffswerte, Verteidigungswerte usw.
 
-#### Llama 2 7b:
+### Llama 2 7b:
 Das LLaMA 2 7B Modell wurde ebenfalls eingesetzt, um die Ergebnisse zu vergleichen. Obwohl es hochentwickelt ist, zeigten unsere Tests, dass das Prompting mit LLaMA 2 7B nicht immer effektiv funktionierte. Teilweise wurden passende Namen generiert, während in anderen Fällen keine sinnvollen Ergebnisse produziert wurden.
 
-#### Ergebnisse und Diskussion:
+### Ergebnisse und Diskussion:
 Die durchgeführten Experimente zeigten, dass GPT-3.5-turbo konsistentere und kreativere Namen lieferte im Vergleich zu LLaMA 2 7B. Die Herausforderungen bei der Verwendung von LLaMA 2 7B könnten auf verschiedene Faktoren zurückzuführen sein, einschließlich der Art des Prompting und der Modellkonfiguration. Diese Ergebnisse betonen die Wichtigkeit der Modellauswahl und -anpassung für spezifische Aufgaben im Bereich des Natural Language Processing.
 
 Zu finden ist dieses Kapitel unter: **"pokemon_namen_generierung.ipynb"**
 
-### Evaluation:
+## 5. Evaluation:
