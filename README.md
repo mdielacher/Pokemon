@@ -13,13 +13,14 @@ Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
 
 ## Data Description:
 **Source:**: https://www.kaggle.com/datasets/abcsds/pokemon
-**Llama 2 7b:** https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
 
 **Datenqualität:** 
 Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen der Einträge sehr inkonsistent. Weitere Details dazu finden Sie im Kapitel zur Datenvorbereitung.
 
-## Process:
+**Llama 2 7b:** https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF --> Geben Sie dieses Modell in den Ordner **"llm"**
 
+## Process:
+In diesem Kapitel werden die Data Preperation, Data Understanding, die GAN's, dass LLM für die Namensgenerierung und die Evaluation behandelt.
 
 ## 1. Data Preperation:
 Im Rahmen der Datenvorbereitung wurde zunächst der Rohdatensatz eingelesen. Um die Daten übersichtlicher und effizienter für die weitere Analyse zu gestalten, haben wir uns entschieden, bestimmte Spalten zu entfernen. Insbesondere die Spalten Total und #, welche für unsere Analysezwecke nicht relevant waren, wurden aus dem Datensatz entfernt.
