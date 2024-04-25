@@ -13,6 +13,7 @@ Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
 
 ## Data Description:
 **Source:**: https://www.kaggle.com/datasets/abcsds/pokemon
+**Llama 2 7b:** https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
 
 **Datenqualität:** 
 Die Datenqualität des Rohdatensatzes war generell gut, jedoch waren die Namen der Einträge sehr inkonsistent. Weitere Details dazu finden Sie im Kapitel zur Datenvorbereitung.
@@ -50,6 +51,15 @@ Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb
 #### Tensorflow GAN:
 
 ### Namensgenerierung der Pokemons:
-Natürlich wäre es langweilig wenn die Daten synthetischen Pokemons keine Namen hätten, deswegen wurde ein LLM-Assitant mit GPT35-turbo erstellt um auf basis der Stats Namen zu generieren. Dazu haben wir auch noch ein weiteres Model Namens Llama 2 7B verwendet um einen Vergleich zu machen. Da Texte nicht messbar sind.
+#### GPT-3.5-turbo:
+Dieses Modell wurde aufgrund seiner neuesten Architektur und optimierten Performance für die Generierung kreativer und konsistenter Pokemon-Namen ausgewählt. Die Basis der Namensgenerierung bilden die statistischen Daten der Pokemon, wie Typ, Angriffswerte, Verteidigungswerte usw.
+
+#### Llama 2 7b:
+Das LLaMA 2 7B Modell wurde ebenfalls eingesetzt, um die Ergebnisse zu vergleichen. Obwohl es hochentwickelt ist, zeigten unsere Tests, dass das Prompting mit LLaMA 2 7B nicht immer effektiv funktionierte. Teilweise wurden passende Namen generiert, während in anderen Fällen keine sinnvollen Ergebnisse produziert wurden.
+
+#### Ergebnisse und Diskussion:
+Die durchgeführten Experimente zeigten, dass GPT-3.5-turbo konsistentere und kreativere Namen lieferte im Vergleich zu LLaMA 2 7B. Die Herausforderungen bei der Verwendung von LLaMA 2 7B könnten auf verschiedene Faktoren zurückzuführen sein, einschließlich der Art des Prompting und der Modellkonfiguration. Diese Ergebnisse betonen die Wichtigkeit der Modellauswahl und -anpassung für spezifische Aufgaben im Bereich des Natural Language Processing.
+
+Zu finden ist dieses Kapitel unter: **"pokemon_namen_generierung.ipynb"**
 
 ### Evaluation:
