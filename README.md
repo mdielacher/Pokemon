@@ -1,6 +1,9 @@
 # Pokemon - GAI
 **Group 1:** Lisa Rost, Merna Zaher, Lena Huber, Marcel Dielacher
 
+## Präsentation:
+Die Präsentation heißt **"gruppe1_präsentation.pdf"** und befindet sich im Ordner.
+
 ## Use Case:
 
 Für unser Projekt haben wir drei spezifische Anwendungsfälle definiert:
@@ -48,9 +51,21 @@ Ergebnisse dieses Kapitels:
 Zu finden ist dieses Kapitel unter: **"00_data_prep_cleaning_understanding.ipynb"**
 
 ## 3. Model:
-### CTGAN:
+### SDV:
+#### GaussianCopulaSynthesizer:
+Der GaussianCopulaSynthesizer verwendet eine Gaussian Copula-basierte Methode, die eine flexible und leistungsfähige Option für die Modellierung der Abhängigkeiten zwischen den Variablen bietet. Er eignet sich hervorragend zur Erstellung von Datensätzen, die die strukturellen Beziehungen und Korrelationen der Originaldaten widerspiegeln.
+
+#### CTGANSynthesizer:
+Der CTGANSynthesizer basiert auf der Conditional Generative Adversarial Network (CTGAN) Technologie, die speziell für die Herausforderungen bei der Synthese tabellarischer Daten entwickelt wurde. Dieses Modell ist besonders effektiv bei der Handhabung von kategorischen Daten und ungleich verteilten Daten.
+
+#### Schlussfolgerung: 
+Durch den Einsatz von CTGANSynthesizer und GaussianCopulaSynthesizer bieten wir eine robuste Lösung zur Erzeugung von qualitativ hochwertigen synthetischen Daten, die die Privatsphäre schützen und gleichzeitig wertvolle Einblicke in die zugrundeliegenden Datenmuster ermöglichen.
 
 ### Tensorflow GAN:
+In diesem Projekt haben wir auch ein Generative Adversarial Network (GAN) mit TensorFlow entwickelt und umfangreiche Experimente mit verschiedenen Parametern durchgeführt, um die Leistung und die Möglichkeiten dieser Technologie für Tabulare Daten zu erforschen.
+
+#### Aufbau:
+Das von uns verwendete GAN besteht aus einem Generator und einem Diskriminator, beide sind mit TensorFlow implementiert. Der Generator ist darauf trainiert, neue Daten zu erzeugen, die nicht von echten Daten zu unterscheiden sind, während der Diskriminator versucht, echte von generierten Daten zu unterscheiden.
 
 ## 4. Namensgenerierung der Pokemons:
 ### GPT-3.5-turbo:
@@ -65,3 +80,4 @@ Die durchgeführten Experimente zeigten, dass GPT-3.5-turbo konsistentere und kr
 Zu finden ist dieses Kapitel unter: **"pokemon_namen_generierung.ipynb"**
 
 ## 5. Evaluation:
+
